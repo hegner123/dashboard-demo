@@ -8,20 +8,20 @@ function MyChart() {
         label: "Series 1",
         data: [
           [0, 1],
-          [1, 2],
+          [1, 1],
           [2, 4],
-          [3, 2],
-          [4, 7],
+          [3, 1],
+          [4, 8],
         ],
       },
       {
         label: "Series 2",
         data: [
-          [0, 3],
+          [0, 2],
           [1, 1],
-          [2, 5],
-          [3, 6],
-          [4, 4],
+          [2, 6],
+          [3, 1],
+          [4, 1],
         ],
       },
     ],
@@ -37,7 +37,7 @@ function MyChart() {
   const axes = React.useMemo(
     () => [
       { primary: true, position: "bottom", type: "linear", show: false },
-      { position: "left", type: "linear", stacked: true, show: false },
+      { position: "left", type: "linear", stacked: true, show: true },
     ],
     []
   );
@@ -51,7 +51,7 @@ function MyChart() {
         height: "100px",
       }}
     >
-      <Chart data={data} series={series} axes={axes} tooltip />
+      <Chart data={data} series={series} axes={axes} />
     </div>
   );
 }

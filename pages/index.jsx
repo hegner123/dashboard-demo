@@ -10,9 +10,23 @@ const Body = styled.main`
 
 const Sidebar = styled.aside`
   display: flex;
+  flex-direction: column;
   flex: 1;
   width: 100%;
   background: ${({ theme }) => theme.colors.dark};
+`;
+
+const SidebarList = styled.ul`
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const SidebarItem = styled.li`
+  color: #fff;
+  padding: var(--spacing-y);
 `;
 
 const Dashboard = styled.section`
@@ -34,18 +48,20 @@ const StatsBar = styled.div`
   display: flex;
   width: 100%;
   background: var(--accent2);
-  height: 10%;
 `;
 
 const StatsList = styled.ul`
-width:100%;
+  width: 100%;
   list-style: none;
-  display:flex;
+  display: flex;
+  margin: 10px 0;
 `;
 
 const StatsItem = styled.li`
-width:100%;
-`
+  margin: 0 60px;
+
+  width: 100%;
+`;
 
 const Section = styled.section`
   width: 100%;
@@ -92,7 +108,20 @@ export default function Home() {
   return (
     <Body>
       <Sidebar>
-        <div css={"color:#fff;"}>section</div>
+        <div
+          css={
+            "height: 5%;color:#fff;display:flex;justify-content:center;align-items:center;width:100%;"
+          }
+        >
+          <h3 css={"font-size:16px;"}>PRS Dash</h3>
+        </div>
+        <SidebarList>
+          <SidebarItem>Section</SidebarItem>
+          <SidebarItem>Section</SidebarItem>
+          <SidebarItem>Section</SidebarItem>
+          <SidebarItem>Section</SidebarItem>
+          <SidebarItem>Section</SidebarItem>
+        </SidebarList>
       </Sidebar>
       <Dashboard>
         <MenuBar></MenuBar>
@@ -121,6 +150,15 @@ export default function Home() {
           </Row>
           <Row>
             <CardList>
+              <Card>
+                <CardTitle>News Letter Signups</CardTitle>
+                <CardBody>
+                  <CardBodyText>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ducimus, repellendus?
+                  </CardBodyText>
+                </CardBody>
+              </Card>
               <Card>
                 <CardTitle>My page</CardTitle>
               </Card>
