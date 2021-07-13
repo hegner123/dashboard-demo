@@ -57,9 +57,5 @@ function MyChart() {
 }
 
 export default function Activity(props) {
-  return (
-    <div>
-      <MyChart />
-    </div>
-  );
+  return <MyChart />;
 }
