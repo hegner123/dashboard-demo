@@ -34,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
     --accent1:#3182CE;
     --accent2:#FEFCBF;
     --accent3:#9DD9D2;
+    --accent4:#FC6868;
     --spacing:20px;
     --spacing-x:0 20px;
     --spacing-y:20px 0;

@@ -3,6 +3,7 @@ import SidebarP from "../components/sidebar";
 import Activity from "../components/activity";
 import Stats from "../components/stats";
 import Menu from "../public/menu.svg";
+import { Pie } from "../components/pie";
 import {
   Body,
   Dashboard,
@@ -19,6 +20,12 @@ import {
   CardBody,
   CardBodyText,
 } from "./styled";
+
+const values = [
+  { title: "One", value: 10, color: "#FC6868" },
+  { title: "Two", value: 15, color: "#3182CE" },
+  { title: "Three", value: 20, color: "#FEFCBF" },
+];
 
 export default function Home() {
   return (
@@ -57,11 +64,34 @@ export default function Home() {
                   </CardBody>
                 </CardRow>
               </Card>
-              <Card>
-                <CardTitle>My page</CardTitle>
-              </Card>
-              <Card>
-                <CardTitle>My page</CardTitle>
+              <Card width={"50%"}>
+                <CardRow>
+                  <CardTitle>My page</CardTitle>
+                </CardRow>
+                <CardRow>
+                  <CardBody>
+                    <Pie values={values} radius={"40"} />
+                    <div css={"width:100%;"}>
+                      <ul
+                        css={
+                          "display:flex;flex-direction:column;justify-content:center;height:100%;align-items:center;"
+                        }
+                      >
+                        {values.map((value) => (
+                          <li key={value.title}>
+                            <div
+                              css={
+                                "background:" + value.color + "; padding:0 1px;"
+                              }
+                            >
+                              {value.title}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </CardBody>
+                </CardRow>
               </Card>
               <Card>
                 <CardTitle>My page</CardTitle>
